@@ -43,5 +43,3 @@ for i in range(len(f)):
 
 
 
-
-
