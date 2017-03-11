@@ -1,13 +1,21 @@
 import math
 
 g = 9.80665
-h = 1
+h = 1.02
+
 #R data from experiment
 data = {
-    "R0": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+
+    "R0": [1.1834, 1.212, 1.2504, 1.2764, 1.353, 6, 7, 8, 9, 10],
     # angle      15      30      45      60      75       [min,max]
-    "R15-75": [[1, 10],[1, 10],[1, 10],[1, 10],[1, 10]]
+    "R15-75": [[1, 10],[1, 10],[1, 10],[1, 10],[1, 10]],
 }
+
+# print("R0",data["R0"])
+# print("R15-75",data["R15-75"])
+    
+    
+    
 R0_average= sum(data["R0"])/len(data["R0"])
 v0=R0_average*math.sqrt(g/2/h)
 # theoretical_R=[R15,R30,R45,R60,R75]
@@ -35,3 +43,6 @@ R_uncertainty_experimental = [(x[1]-x[0])/2 for x in data["R15-75"]]
 for x in range(5):
     angle = (x + 1)*15
     print("R",angle,"=",R_uncertainty_experimental[x],"Uncertainty")
+
+for x in range(len(R_experimental)):
+    print("R", (x+1)*15, "error bar min", R_experimental[x]-R_uncertainty_experimental[x], "middle",R_experimental[x],"max", R_experimental[x]+R_uncertainty_experimental[x])
