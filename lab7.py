@@ -52,8 +52,8 @@ print("k_delta",k_delta,"difference_work_kDelta",difference_work_kDelta)
 #part 4
 t_cart_delta=0.5
 w_cart=1
-position=[0,0.054,0.108,0.216]
-velocity=[0.243,0.291,0.330,0.387]
+position=[0,0.054,0.108,0.162]
+velocity=[0.243,0.291,0.340,0.387]
 a_average=0.253
 
 
